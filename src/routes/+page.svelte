@@ -23,14 +23,14 @@
     background-position: center;
     margin: 0;
     height: 100vh;
-    padding: 20px
+    padding: 20px;
   }
 
   .content {
     text-align  : center;
     align-items: center;
-    /* padding: 10px;
-    margin: 10px;
+    padding: 10px;
+    /*margin: 10px;
     background-color: rgba(255, 255, 255, 0.522); */
   }
 

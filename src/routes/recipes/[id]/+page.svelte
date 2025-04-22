@@ -61,7 +61,7 @@
     .contentrecipes {
         display: grid; 
         grid-template-columns: 1fr 1fr; 
-        /* padding: 20px; */
+        padding: 10px;
 
         @media (max-width: 1000px) {
         width: 334.37px;

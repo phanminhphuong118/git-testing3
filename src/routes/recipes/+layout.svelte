@@ -11,6 +11,7 @@
 </svelte:head> -->
 <!-- My navbar here. -->
 <h3>LET'S CHOOSE YOUR RECIPES</h3>
+<!-- <p>Explore our wide range of recipes to find the perfect match for your cravings</p> -->
 
 <div class="container">
     <div class="content">
@@ -35,12 +36,12 @@
 
       width: 100%;
       display: grid; 
+      /* padding: 10px; ko được dùng cái này vì nó sẽ break container */
       grid-template-columns: auto 1fr; /*auto là fit đúng chữ thôi, thay cho 1fr*/
 
       @media (max-width: 700px) {
         grid-template-columns: 1fr;
         display:inline-block;
-
       }
     }
   
@@ -48,6 +49,9 @@
         display: grid;
         flex-direction: column;
         color: rgb(4, 54, 15);
+        padding: 10px;
+        /* padding-right: 10px;
+        padding-left: 10px; */
   
         & > a {
             text-decoration: none;

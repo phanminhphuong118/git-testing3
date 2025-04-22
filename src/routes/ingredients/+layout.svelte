@@ -7,18 +7,18 @@
 </script>
 
 <div class="container">
-<h3>Details of each ingredient</h3>
+<h3>INGREDIENT'S DETAILS</h3>
 <div class="content">
     <slot/>
     <div id="detailsingredients">
     {#each $ingredientStore as ingredient (ingredient.id)}
-    <div>
-    <h4>{ingredient.name}</h4>
-    <ul>
-        <li>type: {ingredient.type}</li>
-        <li>unit: {ingredient.unit}</li>
-        <li>price: {ingredient.price}</li>
-    </ul>
+    <div id="eachingredient">
+        <h4>{ingredient.name}</h4>
+        <ul>
+            <li>type: {ingredient.type}</li>
+            <li>unit: {ingredient.unit}</li>
+            <li>price: {ingredient.price}</li>
+        </ul>
     </div>
     {/each}
     </div>
@@ -29,6 +29,24 @@
     #detailsingredients {
         display:grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        /* padding: 10px;    */
+        @media (max-width: 1000px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* Stack the columns vertically */
+        }
+        @media (max-width: 700px) {
+        grid-template-columns: 1fr 1fr; /* Stack the columns vertically */
+    }
+
+    }
+
+    #eachingredient {
+        background-color: #b0e8a4;
+        margin: 10px;
+        padding-left: 20px;
+
+        &:is(:hover) {
+            background-color: #55A630;
+            }
     }
 
 </style>

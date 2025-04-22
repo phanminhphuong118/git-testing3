@@ -3,31 +3,32 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
       "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   
-    /* margin: 5px; */
-    /* padding: 5px; */
     display: flex;
     flex-direction: column;
     color: rgb(4, 54, 15);
   }
 
 .container {
-    /* padding: 10px; */
-    /* margin: 10px; */
     background-image: url('/images/wood-background.jpg');
     background-size: cover;
     background-position: center;
 }
   
 .content {
-    /* padding: 10px; */
-    /* margin: 10px 10px; */
     background-color: rgba(255, 255, 255, 0.522);
-    /* align-items: center; */
+    /* margin-bottom: 20px; */
+    padding-bottom: 80px;
+    padding-top: 5px;
   }
 
 h3 {
     text-align: center;
 }
+
+p {
+    text-align: center;
+}
+
 *{
     font-family: 'Delius', sans-serif;
 }
