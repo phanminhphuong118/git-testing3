@@ -63,10 +63,17 @@
 
   nav {
     background-color:#2B9348;
-    padding-left: 20px;
-    box-shadow: 0 5px 3px lightgray;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
   }
+
+  @media (max-width: 1000px) {
+    nav {
+      display: grid; 
+      grid-template-columns: 1fr 1fr;
+    }
+}
 
 </style>

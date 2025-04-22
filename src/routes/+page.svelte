@@ -28,9 +28,10 @@
 
   .content {
     text-align  : center;
-    padding: 10px;
+    align-items: center;
+    /* padding: 10px;
     margin: 10px;
-    background-color: rgba(255, 255, 255, 0.522);
+    background-color: rgba(255, 255, 255, 0.522); */
   }
 
 </style>

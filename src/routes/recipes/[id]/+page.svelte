@@ -21,10 +21,12 @@
 
 </script>
 
-<div>
+<div class="contentrecipes">
     {#if foundRecipe}
     <img src="/images/{foundRecipe.image}" alt="{foundRecipe.name} image"/>
     <!-- <h1>hello: {ingredientName}</h1> -->
+
+    <div>
     <h3>{foundRecipe.name}</h3>
     <ul>
     <li>Ingredients:</li>
@@ -41,7 +43,33 @@
             {/each}
         </ul>
     </ul>
+    </div>
     {:else}
     <h1>Loading or not found</h1>
     {/if}
 </div>
+
+<style>
+    img {
+        width: 100%; /* Stack the columns vertically */
+    }
+
+    h3 {
+        padding: 20px;
+        display: inline;
+    }
+    .contentrecipes {
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        /* padding: 20px; */
+
+        @media (max-width: 1000px) {
+        width: 334.37px;
+        grid-template-columns: 1fr; /* Stack the columns vertically */
+        
+    }
+    }
+
+  
+
+</style>
