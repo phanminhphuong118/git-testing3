@@ -33,6 +33,7 @@
   <a href="/recipes" class:active={path === "/recipes"}>RECIPES</a>
   <a href="/ingredients" class:active={path === "/ingredients"}>INGREDIENTS</a>
   <a href="/tags" class:active={path === "/tags"}>TAGS</a>
+  
 </nav>
 
 <div class="container">

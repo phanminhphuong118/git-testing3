@@ -13,8 +13,8 @@
     $: id = $page.params.id;
     $: foundRecipe = recipes.find(r => r.id == id);
 
-    import { getIngredientById } from  "$lib/js/ingredients-store.js";
-
+    import { getIngredientById } from "$lib/js/ingredients-store.js";
+    
     // $: ingredientList = foundRecipe.ingredients.map(i => getIngredientById(i).name)
     $: ingredientList = foundRecipe.ingredients.map(i => getIngredientById(i))
     $: console.log(ingredientList); 
