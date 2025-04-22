@@ -24,6 +24,49 @@
   
 </script>
 
+<header>
+  <h1>Paige Phan Kitchen Creations</h1>
+</header>
+
+<nav id="nav">
+  <a href="/" class:active={path === "/"}>HOME PAGE</a>
+  <a href="/recipes" class:active={path === "/recipes"}>RECIPES</a>
+  <a href="/ingredients" class:active={path === "/ingredients"}>INGREDIENTS</a>
+  <a href="/tags" class:active={path === "/tags"}>TAGS</a>
+</nav>
+
 <div class="container">
   <slot />
 </div>
+
+<style>
+  header {
+    text-align: center;
+    color: #2B9348;
+  }
+  a {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 20px;
+
+      &.active {
+        text-decoration: underline;
+      }
+      
+      &:is(:hover) {
+        background-color: #55A630;
+      }
+
+    }
+
+  nav {
+    background-color:#2B9348;
+    padding-left: 20px;
+    box-shadow: 0 5px 3px lightgray;
+    padding: 10px;
+    text-align: center;
+  }
+
+</style>

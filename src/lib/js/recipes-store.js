@@ -87,7 +87,7 @@ const RECIPES = [
         "cookingTime": 35,
         "difficulty": "Medium",
         "tags": ["Soup", "Comfort Food", "Vegetarian"],
-        "image": "mushroom-soup.jpg",
+        "image": "creamy-soup.jpg",
         "steps": [
             "Sauté onion and garlic in butter.",
             "Add sliced mushrooms and cook until browned.",
