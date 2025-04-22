@@ -29,19 +29,25 @@
     <div>
     <h3>{foundRecipe.name}</h3>
     <ul>
-    <li>Ingredients:</li>
-        <ul>
-            {#each ingredientList as ingredient}
-                <li>{ingredient.name}</li>
+        <li>Diffculty level: {foundRecipe.difficulty}</li>
+        <li>Cooking Time: {foundRecipe.cookingTime} minutes</li>
+        <li>Ingredients:</li>
+            <ul>
+                {#each ingredientList as ingredient}
+                    <li>{ingredient.name}</li>
+                {/each}
+            </ul>
+        <li>Steps:</li>
+            <ul>
+                {#each foundRecipe.steps as step}
+                <li>{step}</li>
+                {/each}
+            </ul>
+        <li>Tags:</li>
+            {#each foundRecipe.tags as tag}
+                <span>#{tag}</span>
             {/each}
-        </ul>
-    <li>Cooking Time: {foundRecipe.cookingTime}</li>
-    <li>Steps:</li>
-        <ul>
-            {#each foundRecipe.steps as step}
-            <li>{step}</li>
-            {/each}
-        </ul>
+
     </ul>
     </div>
     {:else}
