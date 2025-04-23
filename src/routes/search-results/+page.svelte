@@ -1,1 +1,1 @@
-<p>Please see the below recipes which relate to your keyword(s) and click onto the url for more details</p>
+<p>Please see the below recipe(s) which relate to your keyword(s) and click onto the url for more details</p>

@@ -101,10 +101,17 @@ const RECIPES = [
 
 export const recipeStore = writable(RECIPES);
 
-export const output = writable("");
-export const input = writable("");
+export const outputKeyword = writable("");
+export const inputKeyword = writable("");
 
 export const searchRecipeName = derived(
-    [recipeStore, output],
-    ([$recipeStore, $output]) => 
-    $recipeStore.filter(recipe => recipe.name.toLowerCase().includes($output.toLowerCase())));
+    [recipeStore, outputKeyword],
+    ([$recipeStore, $outputKeyword]) => 
+    $recipeStore.filter(recipe => recipe.name.toLowerCase().includes($outputKeyword.toLowerCase())));
+
+export const inputTag = writable("");
+
+export const searchTagName = derived(
+    [recipeStore, inputTag],
+    ([$recipeStore, $inputTag]) => 
+    $recipeStore.filter(recipe => recipe.tags.includes($inputTag)));

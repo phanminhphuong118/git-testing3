@@ -1,9 +1,17 @@
 <script>
-    import {recipeStore} from "$lib/js/recipes-store.js";
+    import {recipeStore, inputTag} from "$lib/js/recipes-store.js";
 
     // This is a special Svelte store which provides info about the current page.
     import { page } from "$app/stores";
     $: path = $page.url.pathname;
+
+    import { goto } from "$app/navigation";
+
+    function goTag() {
+    const replaceState = false;
+    goto("/tag-results", { replaceState });
+    }
+
 </script>
 
 <!-- <svelte:head>
@@ -21,7 +29,12 @@
                 <a href={`/recipes/${recipe.id}`} class:active={path.startsWith(`/recipes/${recipe.id}`)}>{recipe.name}</a>
                 <ul>
                 <li>Diffculty level: {recipe.difficulty}</li>
-                <li>Tags: {recipe.tags}</li>
+                <div id ="tag">
+                <li>Tags:</li>
+                {#each recipe.tags as tag}
+                <button on:click={()=> {$inputTag = tag; goTag();}} type="submit">#{tag}</button>
+                {/each}
+                </div>
                 </ul>
             <!-- </div> -->
         {/each} 
@@ -66,6 +79,22 @@
             }
         }  
     }
+
+    button {
+        background-color: transparent;
+        border: 0cm;
+        color: rgb(222, 87, 24);
+        &:is(:hover) {
+            text-decoration: underline;
+            }
+    }
+
+    #tag {
+        display: flex;
+
+
+    }
+
 
   </style>
   

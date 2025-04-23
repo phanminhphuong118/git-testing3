@@ -22,10 +22,10 @@
   import { page } from "$app/stores";
   $: path = $page.url.pathname;
 
-  import { input } from "$lib/js/recipes-store";
-  import { output } from "$lib/js/recipes-store";
+  import { inputKeyword } from "$lib/js/recipes-store";
+  import { outputKeyword } from "$lib/js/recipes-store";
   
-  $: console.log(output);
+  // $: console.log(outputKeyword);
 
   import { goto } from "$app/navigation";
 
@@ -46,8 +46,8 @@
   <a href="/ingredients" class:active={path === "/ingredients"}>INGREDIENTS</a>
   <a href="/tags" class:active={path === "/tags"}>TAGS</a>
   
-  <input type="text" bind:value={$input} placeholder="your keyword" maxlength="100" size="20"/>
-  <button on:click={()=> {if($input!==""){$output = $input; goSearch(); $input = "";}}} type="submit">Search</button>
+  <input type="text" bind:value={$inputKeyword} placeholder="your keyword" maxlength="100" size="20"/>
+  <button on:click={()=> {if($inputKeyword!==""){$outputKeyword = $inputKeyword; goSearch(); $inputKeyword = "";}}} type="submit">Search</button>
 </nav>
 
 

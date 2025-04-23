@@ -3,7 +3,7 @@
   
     // $: console.log($page.params.id);
 
-    import {recipeStore} from "$lib/js/recipes-store.js";
+    import {recipeStore, inputTag} from "$lib/js/recipes-store.js";
 
     let recipes = [];
     recipeStore.subscribe(value => {
@@ -14,10 +14,19 @@
     $: foundRecipe = recipes.find(r => r.id == id);
 
     import { getIngredientById } from "$lib/js/ingredients-store.js";
-    
+
     // $: ingredientList = foundRecipe.ingredients.map(i => getIngredientById(i).name)
     $: ingredientList = foundRecipe.ingredients.map(i => getIngredientById(i))
     $: console.log(ingredientList); 
+
+    $: path = $page.url.pathname;
+
+    import { goto } from "$app/navigation";
+
+    function goTag() {
+    const replaceState = false;
+    goto("/tag-results", { replaceState });
+    }
 
 </script>
 
@@ -45,7 +54,7 @@
             </ul>
         <li>Tags:</li>
             {#each foundRecipe.tags as tag}
-                <span>#{tag}</span>
+            <button on:click={()=> {$inputTag = tag; goTag();}} type="submit">#{tag}</button>
             {/each}
 
     </ul>
@@ -74,6 +83,15 @@
         grid-template-columns: 1fr; /* Stack the columns vertically */
         
     }
+    }
+
+    button {
+        background-color: transparent;
+        border: 0cm;
+        color: rgb(222, 87, 24);
+        &:is(:hover) {
+            text-decoration: underline;
+            }
     }
 
   
