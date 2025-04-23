@@ -24,7 +24,7 @@
 
   import { inputKeyword } from "$lib/js/recipes-store";
   import { outputKeyword } from "$lib/js/recipes-store";
-  
+
   // $: console.log(outputKeyword);
 
   import { goto } from "$app/navigation";
@@ -32,8 +32,7 @@
   function goSearch() {
     const replaceState = false;
     goto("/search-results", { replaceState });
-    }
-
+  }
 </script>
 
 <header>
@@ -45,11 +44,25 @@
   <a href="/recipes" class:active={path === "/recipes"}>RECIPES</a>
   <a href="/ingredients" class:active={path === "/ingredients"}>INGREDIENTS</a>
   <a href="/tags" class:active={path === "/tags"}>TAGS</a>
-  
-  <input type="text" bind:value={$inputKeyword} placeholder="your keyword" maxlength="100" size="20"/>
-  <button on:click={()=> {if($inputKeyword!==""){$outputKeyword = $inputKeyword; goSearch(); $inputKeyword = "";}}} type="submit">Search</button>
-</nav>
 
+  <input
+    type="text"
+    bind:value={$inputKeyword}
+    placeholder="your keyword"
+    maxlength="100"
+    size="20"
+  />
+  <button
+    on:click={() => {
+      if ($inputKeyword !== "") {
+        $outputKeyword = $inputKeyword;
+        goSearch();
+        $inputKeyword = "";
+      }
+    }}
+    type="submit">Search</button
+  >
+</nav>
 
 <div class="container">
   <slot />
@@ -58,27 +71,26 @@
 <style>
   header {
     text-align: center;
-    color: #2B9348;
+    color: #2b9348;
   }
   a {
-      color: white;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 20px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
 
-      &.active {
-        text-decoration: underline;
-      }
-      
-      &:is(:hover) {
-        background-color: #55A630;
-      }
-
+    &.active {
+      text-decoration: underline;
     }
 
+    &:is(:hover) {
+      background-color: #55a630;
+    }
+  }
+
   nav {
-    background-color:#2B9348;
+    background-color: #2b9348;
     padding: 20px;
     text-align: center;
     /* display: grid; */
@@ -87,9 +99,8 @@
 
   @media (max-width: 1000px) {
     nav {
-      display: grid; 
+      display: grid;
       grid-template-columns: 1fr 1fr;
     }
-}
-
+  }
 </style>
