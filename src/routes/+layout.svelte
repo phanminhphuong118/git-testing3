@@ -21,7 +21,19 @@
   // This is a special Svelte store which provides info about the current page.
   import { page } from "$app/stores";
   $: path = $page.url.pathname;
+
+  import { input } from "$lib/js/recipes-store";
+  import { output } from "$lib/js/recipes-store";
   
+  $: console.log(output);
+
+  import { goto } from "$app/navigation";
+
+  function goSearch() {
+    const replaceState = false;
+    goto("/search-results", { replaceState });
+    }
+
 </script>
 
 <header>
@@ -34,7 +46,10 @@
   <a href="/ingredients" class:active={path === "/ingredients"}>INGREDIENTS</a>
   <a href="/tags" class:active={path === "/tags"}>TAGS</a>
   
+  <input type="text" bind:value={$input} placeholder="your keyword" maxlength="100" size="20"/>
+  <button on:click={()=> {if($input!==""){$output = $input; goSearch(); $input = "";}}} type="submit">Search</button>
 </nav>
+
 
 <div class="container">
   <slot />

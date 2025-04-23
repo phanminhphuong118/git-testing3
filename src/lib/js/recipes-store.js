@@ -100,3 +100,11 @@ const RECIPES = [
 ]
 
 export const recipeStore = writable(RECIPES);
+
+export const output = writable("");
+export const input = writable("");
+
+export const searchRecipeName = derived(
+    [recipeStore, output],
+    ([$recipeStore, $output]) => 
+    $recipeStore.filter(recipe => recipe.name.toLowerCase().includes($output.toLowerCase())));

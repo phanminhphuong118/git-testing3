@@ -38,3 +38,4 @@ export const ingredientStore = writable(INGREDIENTS);
 export function getIngredientById(id){
     return INGREDIENTS.find(item => item.id === id);
 }
+

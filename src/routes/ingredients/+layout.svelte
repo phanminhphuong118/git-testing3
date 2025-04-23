@@ -26,6 +26,11 @@
 </div>
 
 <style>
+
+    .container {
+        height: 130vh;
+    }
+
     #detailsingredients {
         display:grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -36,7 +41,6 @@
         @media (max-width: 700px) {
         grid-template-columns: 1fr 1fr; /* Stack the columns vertically */
     }
-
     }
 
     #eachingredient {
