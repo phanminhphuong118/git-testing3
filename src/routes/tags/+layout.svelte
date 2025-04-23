@@ -32,6 +32,7 @@
 
     table {
     margin: auto;
+    margin-bottom: 40px;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 80%;

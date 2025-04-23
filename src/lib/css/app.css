@@ -12,7 +12,8 @@ body {
     background-image: url('/images/wood-background.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    /* height: 100vh; */
+    background-repeat: repeat;
 }
   
 .content {
