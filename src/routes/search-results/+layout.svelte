@@ -14,9 +14,7 @@
         <h4>NO RECIPE MATCHES YOUR KEYWORD</h4>
       {:else}
         {#each $searchRecipeName as recipe (recipe.id)}
-          <a href={`/recipes/${recipe.id}`} class:active={path.startsWith(`/recipes/${recipe.id}`)}
-            >{recipe.name}</a
-          >
+          <a href={`/recipes/${recipe.id}`} class:active={path.startsWith(`/recipes/${recipe.id}`)}>{recipe.name}</a>
         {/each}
       {/if}
     </nav>

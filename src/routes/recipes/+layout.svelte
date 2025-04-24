@@ -25,9 +25,7 @@
     <nav>
       {#each $recipeStore as recipe (recipe.id)}
         <!-- <div class="container2"> -->
-        <a href={`/recipes/${recipe.id}`} class:active={path.startsWith(`/recipes/${recipe.id}`)}
-          >{recipe.name}</a
-        >
+        <a href={`/recipes/${recipe.id}`} class:active={path.startsWith(`/recipes/${recipe.id}`)}>{recipe.name}</a>
         <ul>
           <li>Diffculty level: {recipe.difficulty}</li>
           <div id="tag">
@@ -38,8 +36,7 @@
                   $inputTag = tag;
                   goTag();
                 }}
-                type="submit">#{tag}</button
-              >
+                type="submit">#{tag}</button>
             {/each}
           </div>
         </ul>

@@ -22,8 +22,7 @@
   import { page } from "$app/stores";
   $: path = $page.url.pathname;
 
-  import { inputKeyword } from "$lib/js/recipes-store";
-  import { outputKeyword } from "$lib/js/recipes-store";
+  import { inputKeyword, outputKeyword } from "$lib/js/recipes-store";
 
   // $: console.log(outputKeyword);
 
