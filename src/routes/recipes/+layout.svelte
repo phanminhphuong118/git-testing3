@@ -1,7 +1,5 @@
 <script>
   import { recipeStore, inputTag } from "$lib/js/recipes-store.js";
-
-  // This is a special Svelte store which provides info about the current page.
   import { page } from "$app/stores";
   $: path = $page.url.pathname;
 
@@ -13,18 +11,13 @@
   }
 </script>
 
-<!-- <svelte:head>
-  <title>testing Page</title>
-</svelte:head> -->
-<!-- My navbar here. -->
 <h3>LET'S CHOOSE YOUR RECIPES</h3>
-<!-- <p>Explore our wide range of recipes to find the perfect match for your cravings</p> -->
 
+<!-- My navbar here. -->
 <div class="container">
   <div class="content">
     <nav>
       {#each $recipeStore as recipe (recipe.id)}
-        <!-- <div class="container2"> -->
         <a href={`/recipes/${recipe.id}`} class:active={path.startsWith(`/recipes/${recipe.id}`)}>{recipe.name}</a>
         <ul>
           <li>Diffculty level: {recipe.difficulty}</li>
@@ -40,7 +33,6 @@
             {/each}
           </div>
         </ul>
-        <!-- </div> -->
       {/each}
     </nav>
     <slot />
@@ -51,8 +43,8 @@
   .content {
     width: 100%;
     display: grid;
-    /* padding: 10px; ko được dùng cái này vì nó sẽ break container */
-    grid-template-columns: auto 1fr; /*auto là fit đúng chữ thôi, thay cho 1fr*/
+    /* padding: 10px; must not use this, because it shall break container */
+    grid-template-columns: auto 1fr; /*auto is for fit the contentr*/
 
     @media (max-width: 700px) {
       grid-template-columns: 1fr;
@@ -65,8 +57,6 @@
     flex-direction: column;
     color: rgb(4, 54, 15);
     padding: 10px;
-    /* padding-right: 10px;
-        padding-left: 10px; */
 
     & > a {
       text-decoration: none;
@@ -74,8 +64,6 @@
       cursor: pointer;
       background-color: #b0e8a4;
       text-align: center;
-      /* padding: 0.2rem 1rem; */
-
       &:is(:hover, .active) {
         background-color: #55a630;
       }

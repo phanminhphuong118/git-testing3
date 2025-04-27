@@ -1,7 +1,5 @@
 <script>
     import { ingredientStore } from "$lib/js/ingredients-store.js";
-  
-    // This is a special Svelte store which provides info about the current page.
     import { page } from "$app/stores";
     $: path = $page.url.pathname;
   </script>

@@ -2,7 +2,7 @@
   import "$lib/css/app.css";
 
   // Importing the 3 Svelte stores:
-  import { recipeStore } from "$lib/js/recipes-store";
+  import { recipeStore, inputKeyword, outputKeyword } from "$lib/js/recipes-store";
   import { ingredientStore, getIngredientById } from "$lib/js/ingredients-store";
   import { tagStore } from "$lib/js/tags-store";
 
@@ -19,19 +19,22 @@
   // Check the console in your browser's developer tools to see the console logs above.
 
   // This is a special Svelte store which provides info about the current page.
+
   import { page } from "$app/stores";
   $: path = $page.url.pathname;
 
-  import { inputKeyword, outputKeyword } from "$lib/js/recipes-store";
-
-  // $: console.log(outputKeyword);
-
   import { goto } from "$app/navigation";
-
   function goSearch() {
     const replaceState = false;
     goto("/search-results", { replaceState });
   }
+
+  function trimKeyword (inputKeyword) {
+    return inputKeyword.trim();
+  }
+
+  function onButtonClick() {alert("It's empty, please input again!");}
+
 </script>
 
 <header>
@@ -52,15 +55,17 @@
     size="20"
   />
   <button
-    on:click={() => {
-      if ($inputKeyword !== "") {
+    on:click={(e) => {
+      if (trimKeyword($inputKeyword)!== "") {
         $outputKeyword = $inputKeyword;
         goSearch();
         $inputKeyword = "";
       }
+      else if (trimKeyword($inputKeyword) == "") {
+        onButtonClick();
+      }
     }}
-    type="submit">Search</button
-  >
+    type="submit">Search</button>
 </nav>
 
 <div class="container">
