@@ -7,6 +7,7 @@
 </script>
 
 <slot />
+<div>abc</div>
 <div class="container">
   <div class="content">
     <nav>
