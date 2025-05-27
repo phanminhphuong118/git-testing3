@@ -6,6 +6,8 @@
   $: path = $page.url.pathname;
 </script>
 
+
+
 <slot />
 <div class="container">
   <div class="content">
