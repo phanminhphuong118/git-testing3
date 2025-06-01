@@ -13,6 +13,8 @@
 
 <h3>LET'S CHOOSE YOUR RECIPES</h3>
 
+<h2>ABCD</h2>
+<h2>ABCDEFG</h2>
 <!-- My navbar here. -->
 <div class="container">
   <div class="content">
